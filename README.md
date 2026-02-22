@@ -17,28 +17,29 @@ A modular, **feature-first Flutter project** demonstrating **Bloc state manageme
 ---
 
 ## Project Structure
-
+```
 lib/
-├─ core/                  # Global services, utils, exceptions, API engine
-│  ├─ network/            # API request handling
-│  ├─ response/           # API response models & status
-│  ├─ utils/              # Logging, extensions, helpers
-│  ├─ services/           # Session and storage services
-├─ features/              # Feature-first modules
-│  ├─ login/              # Login feature
-│  │  ├─ login_bloc/      # Bloc files
-│  │  ├─ repository/      # API repositories
-│  │  ├─ widget/          # Feature-specific UI
-│  ├─ songs/              # Songs feature
-│  │  ├─ songs_bloc/
-│  │  ├─ repository/
-│  │  ├─ widget/
-│  ├─ splash/             # Splash screen
-├─ shared/                # Reusable components, themes, storage
-├─ models/                # App models
-├─ configs/               # App configuration and routes
-├─ l10n/                  # Localization
-├─ main.dart
+├── core/                   # Global services, utils, exceptions, API engine
+│   ├── network/            # API request handling
+│   ├── response/           # API response models & status
+│   ├── utils/              # Logging, extensions, helpers
+│   └── services/           # Session and storage services
+├── features/               # Feature-first modules
+│   ├── login/              # Login feature
+│   │   ├── login_bloc/     # Bloc files
+│   │   ├── repository/     # API repositories
+│   │   └── widget/         # Feature-specific UI
+│   ├── songs/              # Songs feature
+│   │   ├── songs_bloc/
+│   │   ├── repository/
+│   │   └── widget/
+│   └── splash/             # Splash screen
+├── shared/                 # Reusable components, themes, storage
+├── models/                 # App models
+├── configs/                # App configuration and routes
+├── l10n/                   # Localization
+└── main.dart
+```
 
 ---
 
@@ -47,7 +48,7 @@ lib/
 - **Frontend**: Flutter, Dart, Bloc
 - **Backend Integration**: REST APIs
 - **State Management**: Bloc
-- **Local Storage**: SharedPreferences / Hive (via core/services)
+- **Local Storage**: SharedPreferences / Hive (via `core/services`)
 - **Localization**: ARB files
 - **Theming**: Light & Dark modes
 - **Tools**: VS Code, Android Studio, Flutter CLI
@@ -57,58 +58,50 @@ lib/
 ## Getting Started
 
 1. Clone the repository:
-   ```bash
+```bash
    git clone <repo-url>
+```
 
-	2.	Navigate to the project folder:
+2. Navigate to the project folder:
+```bash
+   cd Flutter-Bloc-Clean-Coding
+```
 
-cd Flutter-Bloc-Clean-Coding
+3. Install dependencies:
+```bash
+   flutter pub get
+```
 
-
-	3.	Install dependencies:
-
-flutter pub get
-
-
-	4.	Run the app:
-
-flutter run
-
-
-
-⸻
-
-Usage
-	•	Each feature is independent; you can add new features without affecting existing ones.
-	•	Bloc handles all state updates and event logic.
-	•	Repositories abstract API interactions and can be swapped with mocks for testing.
-
-⸻
-
-Future Improvements
-	•	Refactor to a stricter feature-first Clean Architecture with separate domain, data, presentation layers.
-	•	Add unit and widget tests for better coverage.
-	•	Separate models per feature instead of global models/.
-	•	Improve folder naming consistency (widget → ui or views).
-
-⸻
-
-Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for improvements.
-
-⸻
-
-License
-
-MIT License
+4. Run the app:
+```bash
+   flutter run
+```
 
 ---
 
-💡 **Next Steps / Suggestions for Improvement:**
+## Usage
 
-1. Rename `widget` folders → `ui` or `views` to be clearer.
-2. Move API/Repository logic under `data/` folder for future clean-architecture readiness.
-3. Keep Bloc isolated per feature — already good.
-4. Optionally, create a `README` inside each feature for documentation.
+- Each feature is independent; you can add new features without affecting existing ones.
+- Bloc handles all state updates and event logic.
+- Repositories abstract API interactions and can be swapped with mocks for testing.
 
+---
+
+## Future Improvements
+
+- Refactor to a stricter feature-first Clean Architecture with separate `domain`, `data`, and `presentation` layers.
+- Add unit and widget tests for better coverage.
+- Separate models per feature instead of a global `models/` folder.
+- Improve folder naming consistency (`widget` → `ui` or `views`).
+
+---
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for improvements.
+
+---
+
+## License
+
+MIT License
